@@ -1,0 +1,16 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: langchain4j-02multi-model-together
+  ai:
+    alibaba:
+      qwen:
+        apiKey: ${DASHSCOPE_API_KEY}
+        modelName: qwen-plus
+        baseUrl: https://dashscope.aliyuncs.com/compatible-mode/v1
+    deepseek:
+      apiKey: ${DEEPSEEK_API_KEY}
+      modelName: deepseek-chat
+      baseUrl: https://api.deepseek.com/v1
+

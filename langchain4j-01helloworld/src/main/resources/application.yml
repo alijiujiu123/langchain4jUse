@@ -1,0 +1,12 @@
+server:
+  port: 9001
+spring:
+  application:
+      name: langchain4j-01helloworld
+  ai:
+    alibaba:
+      qwen:
+          apiKey: ${DASHSCOPE_API_KEY}
+          modelName: qwen-plus
+          baseUrl: https://dashscope.aliyuncs.com/compatible-mode/v1
+

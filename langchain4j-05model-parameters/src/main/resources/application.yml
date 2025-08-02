@@ -1,0 +1,21 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: langchain4j-05model-parameters
+  ai:
+    alibaba:
+      qwen:
+        apiKey: ${DASHSCOPE_API_KEY}
+        modelName: qwen-plus
+        baseUrl: https://dashscope.aliyuncs.com/compatible-mode/v1
+    deepseek:
+      apiKey: ${DEEPSEEK_API_KEY}
+      modelName: deepseek-chat
+      baseUrl: https://api.deepseek.com/v1
+
+# 只有日志配置级别为debug级别，同时配置langchain4j模型参数日志输出开关才有效
+logging:
+  level:
+    dev:
+      langchain4j: DEBUG

@@ -1,0 +1,13 @@
+server:
+  port: 9006
+spring:
+  application:
+    name: langchain4j-06chat-image
+  ai:
+    alibaba:
+      apiKey: ${DASHSCOPE_API_KEY}
+      baseUrl: https://dashscope.aliyuncs.com/compatible-mode/v1
+      # 多模态大模型，支持图片和文本的结合输入，适用于视觉-语言任务
+      qwenVlMaxModeName: qwen-vl-max
+      # 通义万象，图片生成
+      wanxModelName: wanx2.1-t2i-plus
