@@ -10,11 +10,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@StructuredPrompt("请回答以下问题: {{question}}, 以总-分-总的形式, 字数控制在{{length}}以内, 以{{format}}返回结果，并且使用{{language}}语言描述")
+@StructuredPrompt("请使用{{language}}回答以下问题: {{question}}, 以总-分-总的形式, 字数控制在{{length}}以内, 以{{format}}返回结果")
 public class ProgramerPrompt {
     private String question;
     private int length;
     private String format;
-    // TODO 为什么这个字段="英文",会导致"抱歉，我只能回答编程技术相关的问题"
     private String language;
 }

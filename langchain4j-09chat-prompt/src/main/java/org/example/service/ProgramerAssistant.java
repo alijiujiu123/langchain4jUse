@@ -25,10 +25,10 @@ public interface ProgramerAssistant {
     /**
      * description  结构化提示词
      * date         2025/8/3 20:11
-     * @param
+     * @param       programerPrompt 结构化提示词
      * @return      reactor.core.publisher.Flux<java.lang.String>
      */
-    @SystemMessage("你是一个编程专家，只回答与编程技术相关的问题。" +
+    @SystemMessage("你是一个编程专家，使用用户指定的自然语言，只回答与编程技术相关的问题。" +
             "输出限制: 对于其他领域的问题禁止回答，直接返回'抱歉，我只能回答编程技术相关的问题'。")
     Flux<String> chat(ProgramerPrompt programerPrompt);
 }
