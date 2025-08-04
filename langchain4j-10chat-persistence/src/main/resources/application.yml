@@ -1,0 +1,28 @@
+server:
+  port: 9010
+  servlet:
+    # 设置响应的字符编码，避免流式响应返回乱码
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+spring:
+  application:
+    name: langchain4j-09chat-persistence
+  ai:
+    alibaba:
+      apiKey: ${DASHSCOPE_API_KEY}
+      baseUrl: https://dashscope.aliyuncs.com/compatible-mode/v1
+      # Qwen-Long是在通义千问针对超长上下文处理场景的大语言模型，支持中文、英文等不同语言输入，支持最长1000万tokens(约1500万字或1.5万页文档)的超长上下文对话。
+      # 配合同步上线的文档服务，可支持文本文件（ TXT、DOCX、PDF、XLSX、EPUB、MOBI、MD、CSV）和图片文件（BMP、PNG、JPG/JPEG、GIF 以及PDF扫描件）的解析和对话。
+      # 说明：通过HTTP直接提交请求，支持1M tokens长度，超过此长度建议通过文件方式提交。
+      qwenLongModelName: qwen-long
+  data:
+    # redis配置
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      connect-timeout: 3s
+      timeout: 2s
