@@ -37,8 +37,10 @@ public class ChatFunctioncallingController {
     }
 
     @GetMapping("/weather")
-    public Flux<String> weather(@RequestParam (value = "prompt", defaultValue = "你是谁") String prompt) {
+    public Flux<String> weather(
+            @RequestParam(value = "memoryId", defaultValue = "1") Long memoryId,
+            @RequestParam (value = "prompt", defaultValue = "你是谁") String prompt) {
         log.info("weather.prompt: {}", prompt);
-        return weatherAssistant.chat(prompt);
+        return weatherAssistant.chat(memoryId, prompt);
     }
 }

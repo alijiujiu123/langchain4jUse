@@ -15,8 +15,13 @@ spring:
       apiKey: ${DASHSCOPE_API_KEY}
       baseUrl: https://dashscope.aliyuncs.com/compatible-mode/v1
       # qwen-long 无法实现函数调用
-      qwenLongModelName: qwen-plus
+      qwenPlusModelName: qwen-plus
 qweather:
   # https://ng6hewtg6j.re.qweatherapi.com/v7/weather/now?location=101010100
-  apiHost: https://ng6hewtg6j.re.qweatherapi.com/v7/weather/now?location=%s
+  apiHost: https://ng6hewtg6j.re.qweatherapi.com
   apiKey: ${QWEATHER_API_KEY}
+  url:
+    # 获取当前天气
+    weatherNow: /v7/weather/now?location=%s
+    # 获取城市信息
+    cityLoopup: /geo/v2/city/lookup?location=%s

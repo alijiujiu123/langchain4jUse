@@ -1,5 +1,7 @@
 package org.example.aiAssistant;
 
+import dev.langchain4j.service.MemoryId;
+import dev.langchain4j.service.UserMessage;
 import reactor.core.publisher.Flux;
 
 /**
@@ -9,5 +11,5 @@ import reactor.core.publisher.Flux;
  * @date 2025/8/4 17:47
  */
 public interface WeatherAssistant {
-    Flux<String> chat(String prompt);
+    Flux<String> chat(@MemoryId Long memoryId, @UserMessage String prompt);
 }

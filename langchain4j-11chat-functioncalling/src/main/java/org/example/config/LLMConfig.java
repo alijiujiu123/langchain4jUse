@@ -4,6 +4,7 @@ import cn.hutool.json.JSONObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.langchain4j.agent.tool.ToolSpecification;
+import dev.langchain4j.memory.chat.MessageWindowChatMemory;
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.chat.StreamingChatModel;
 import dev.langchain4j.model.chat.request.json.JsonObjectSchema;
@@ -34,7 +35,7 @@ public class LLMConfig {
     @Value("${spring.ai.alibaba.baseUrl}")
     private String alibabaBaseUrl;
 
-    @Value("${spring.ai.alibaba.qwenLongModelName}")
+    @Value("${spring.ai.alibaba.qwenPlusModelName}")
     private String qwenLongModelName;
 
     @Resource
@@ -106,6 +107,7 @@ public class LLMConfig {
         return AiServices.builder(WeatherAssistant.class)
                 .streamingChatModel(streamingChatModel)
                 // 高阶ai工具
+                .chatMemoryProvider(memoryId -> MessageWindowChatMemory.withMaxMessages(100))
                 .tools(weatherToolHandler)
                 .build();
     }
