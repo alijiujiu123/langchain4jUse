@@ -1,0 +1,22 @@
+server:
+  port: 9011
+  servlet:
+    # 设置响应的字符编码，避免流式响应返回乱码
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+spring:
+  application:
+    name: langchain4j-11chat-functioncalling
+  ai:
+    alibaba:
+      apiKey: ${DASHSCOPE_API_KEY}
+      baseUrl: https://dashscope.aliyuncs.com/compatible-mode/v1
+      # qwen-long 无法实现函数调用
+      qwenLongModelName: qwen-plus
+qweather:
+  # https://ng6hewtg6j.re.qweatherapi.com/v7/weather/now?location=101010100
+  apiHost: https://ng6hewtg6j.re.qweatherapi.com/v7/weather/now?location=%s
+  apiKey: ${QWEATHER_API_KEY}

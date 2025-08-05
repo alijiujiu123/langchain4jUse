@@ -9,7 +9,7 @@ server:
 
 spring:
   application:
-    name: langchain4j-09chat-persistence
+    name: langchain4j-10chat-persistence
   ai:
     alibaba:
       apiKey: ${DASHSCOPE_API_KEY}
