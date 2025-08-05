@@ -1,0 +1,29 @@
+server:
+  port: 9099
+  servlet:
+    # 设置响应的字符编码，避免流式响应返回乱码
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+spring:
+  application:
+    name: z-interview-robot
+  ai:
+    alibaba:
+      apiKey: ${DASHSCOPE_API_KEY}
+      baseUrl: https://dashscope.aliyuncs.com/compatible-mode/v1
+      # 文本向量化大模型
+      qwenTextEmbeddingModelName: text-embedding-v4
+      # qwen-long 模型
+      qwenPlusModelName: qwen-plus
+
+# 向量数据库配置
+vector:
+  qdrant:
+    host: 127.0.0.1
+    port: 6334
+    collection:
+      # 面试题存储collection
+      interviewQuestion: interviewQuestion

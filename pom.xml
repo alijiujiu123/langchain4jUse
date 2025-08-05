@@ -37,6 +37,7 @@
         <module>langchain4j-10chat-persistence</module>
         <module>langchain4j-11chat-functioncalling</module>
         <module>langchain4j-12chat-embedding</module>
+        <module>Z-interview-robot</module>
     </modules>
 
     <properties>
