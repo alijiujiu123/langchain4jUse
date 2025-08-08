@@ -1,5 +1,5 @@
 server:
-  port: 9012
+  port: 9013
   servlet:
     # 设置响应的字符编码，避免流式响应返回乱码
     encoding:
@@ -9,17 +9,16 @@ server:
 
 spring:
   application:
-    name: langchain4j-12chat-embedding
+    name: langchain4j-13chat-rag01
   ai:
     alibaba:
       apiKey: ${DASHSCOPE_API_KEY}
       baseUrl: https://dashscope.aliyuncs.com/compatible-mode/v1
-      # 文本向量化大模型
-      qwenTextEmbeddingModelName: text-embedding-v4
+      qwenPlusModelName: qwen-plus
 
 # 向量数据库配置
 vector:
   qdrant:
     host: 127.0.0.1
     port: 6334
-    collectionName: test-qdrant-collection
+    collectionName: test-rag

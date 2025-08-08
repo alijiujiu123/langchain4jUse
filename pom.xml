@@ -38,6 +38,7 @@
         <module>langchain4j-11chat-functioncalling</module>
         <module>langchain4j-12chat-embedding</module>
         <module>Z-interview-robot</module>
+        <module>langchain4j-13chat-rag01</module>
     </modules>
 
     <properties>
