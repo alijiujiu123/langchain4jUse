@@ -1,0 +1,32 @@
+server:
+  port: 9014
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: langchain4j-14chat-mcp
+
+langchain4j:
+  community:
+    dashscope:
+      streaming-chat-model:
+        api-key: ${DASHSCOPE_API_KEY}
+        model-name: qwen-plus
+      chat-model:
+        api-key: ${DASHSCOPE_API_KEY}
+        model-name: qwen-plus
+
+mcp:
+  AMAP: ${AMAP_API_KEY}
+  GIT_ACCESS_KEY: ${GIT_ACCESS_KEY}
+  atlassianEnvPath: "/Users/geshishuai/Documents/learn/aiWorkspace/mcp-atlassian.env"
+
+# 只有日志级别调整为debug级别，同时配置以上 langchain 日志输出开关才有效
+logging:
+  level:
+    dev:
+      langchain4j: DEBUG
